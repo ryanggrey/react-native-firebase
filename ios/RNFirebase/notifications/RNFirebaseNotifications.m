@@ -110,7 +110,7 @@ RCT_EXPORT_METHOD(stopHandlingNotificationDisplayed) {
         completionHandler(UIBackgroundFetchResultNoData);
     }
     [completionHandlers removeAllObjects];
-    completionHandlers = NULL;
+    completionHandlers = nil;
 }
 
 RCT_EXPORT_METHOD(complete:(NSString*)handlerKey fetchResult:(NSString *)rnFetchResult) {
@@ -124,9 +124,8 @@ RCT_EXPORT_METHOD(complete:(NSString*)handlerKey fetchResult:(NSString *)rnFetch
     }
     
     void (^completionHandler)(UIBackgroundFetchResult) = completionHandlers[handlerKey];
-    completionHandlers[handlerKey] = NULL;
-    
-    if(completionHandler != NULL) {
+    completionHandlers[handlerKey] = nil;
+    if(completionHandler != nil) {
         completionHandler(fetchResult);
     }
 }
